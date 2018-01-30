@@ -305,6 +305,46 @@ data:extend(
   
   
   
+  {
+    type = "technology",
+    name = "landfill",
+    icon_size = 128,
+    icon = "__base__/graphics/technology/landfill.png",
+    unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+      },
+      time = 30
+    },
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "landfill"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "water-fill"
+      }
+    },
+    order = "b-d"
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   

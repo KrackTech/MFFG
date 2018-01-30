@@ -99,8 +99,8 @@ data:extend(
   {
     type = "recipe",
     name = "water-fill",
-    energy_required = 0.1,
-    enabled = true,
+    energy_required = 10,
+    enabled = false,
     category = "crafting",
     ingredients =
     {
