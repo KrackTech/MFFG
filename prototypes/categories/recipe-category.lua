@@ -32,8 +32,19 @@ data:extend(
     type = "recipe-category",
     name = "centrifuging"
   },
+  
+  
   {
     type = "recipe-category",
-    name = "Krack Tech technologies"
+    name = "steam-machine"
+  },
+  
+  
+  
+  
+  
+  {
+    type = "recipe-category",
+    name = "kracktech-technologies"
   }
 })

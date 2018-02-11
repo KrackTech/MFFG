@@ -12,6 +12,10 @@ require("prototypes.categories.recipe-category")
 require("prototypes.technology.technology")
 require("prototypes.entity.entities")
 require("prototypes.entity.heat_furnace")
+
+require("prototypes.entity.steam_furnace")
+require("prototypes.recipe.steam-recipe")
+
 require("prototypes.entity.resources")
 require("prototypes.entity.projectiles")
 require("prototypes.equipment.equipment")

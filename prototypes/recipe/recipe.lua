@@ -231,6 +231,14 @@ data:extend(
     ingredients = {{"steel-plate", 20}, {"copper-plate", 100}, {"pipe", 10}},
     result = "heat-furnace"
   },
+  {
+    type = "recipe",
+    name = "steam-machine",
+    energy_required = 3,
+    enabled = false,
+    ingredients = {{"titanium-plate", 50},{"iron-plate", 50}, {"copper-plate", 50}, {"pipe", 10}},
+    result = "steam-machine"
+  },
   
   
   

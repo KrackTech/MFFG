@@ -432,7 +432,47 @@ data:extend(
   
   
   
-  
+   {
+    type = "technology",
+    name = "steam-machine",
+    icon_size = 128,
+    icon = "__MFFG__/graphics/technology/steam-machine.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "steam-machine"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "gold-plate-2"
+      },
+	   {
+        type = "unlock-recipe",
+        recipe = "iron-plate-2"
+      },
+	   {
+        type = "unlock-recipe",
+        recipe = "copper-plate-2"
+      },
+	   {
+        type = "unlock-recipe",
+        recipe = "titanium-plate-2"
+      },
+	   {
+        type = "unlock-recipe",
+        recipe = "pl-plate-2"
+      }
+
+    },
+    unit =
+    {
+      count = 50,
+      ingredients = {{"science-pack-1", 1}},
+      time = 30
+    },
+    order = "a-b-a",
+  },
   
   
   

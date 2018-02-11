@@ -911,6 +911,17 @@ data:extend(
     place_result = "heat-furnace",
     stack_size = 50
   },
+  {
+    type = "item",
+    name = "steam-machine",
+    icon = "__base__/graphics/icons/assembling-machine-2.png",
+    icon_size = 32,
+    flags = {"goes-to-quickbar"},
+    subgroup = "energy",
+    order = "b[steam-machine]",
+    place_result = "steam-machine",
+    stack_size = 50
+  },
   
   
   
