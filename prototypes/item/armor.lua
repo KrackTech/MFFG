@@ -142,6 +142,42 @@ data:extend(
     stack_size = 1,
     equipment_grid = "large-equipment-grid",
     inventory_size_bonus = 50
+  },
+  {
+    type = "armor",
+    name = "power-armor-mk3",
+    icon = "__MFFG__/graphics/icons/power-armor-mk3.png",
+    icon_size = 32,
+    flags = {"goes-to-main-inventory"},
+    resistances =
+    {
+      {
+        type = "physical",
+        decrease = 20,
+        percent = 60
+      },
+      {
+        type = "acid",
+        decrease = 20,
+        percent = 60
+      },
+      {
+        type = "explosion",
+        decrease = 70,
+        percent = 70
+      },
+      {
+        type = "fire",
+        decrease = 10,
+        percent = 90
+      }
+    },
+    durability = 30000,
+    subgroup = "KT_armor",
+    order = "e[power-armor-mk3]",
+    stack_size = 1,
+    equipment_grid = "larger-equipment-grid",
+    inventory_size_bonus = 70
   }
 }
 )

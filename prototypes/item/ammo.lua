@@ -324,8 +324,8 @@ data:extend(
       action =
       {
         type = "line",
-        range = 25,
-        width = 0.5,
+        range = 30,
+        width = 0.8,
 
         source_effects =
         {
@@ -338,13 +338,13 @@ data:extend(
           target_effects =
           {
             type = "damage",
-            damage = { amount = 500, type="physical"}
+            damage = { amount = 600, type="physical"}
           }
         }
       }
     },
-    magazine_size = 4,
-    subgroup = "ammo",
+    magazine_size = 8,
+    subgroup = "KT_guns",
     order = "c[railgun]",
     stack_size = 999
   },
@@ -517,7 +517,7 @@ data:extend(
   {
     type = "ammo",
     name = "hydrogen-bomb",
-    icon = "__base__/graphics/icons/atomic-bomb.png",
+    icon = "__MFFG__/graphics/icons/hydro-bomb.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
     ammo_type =
@@ -542,7 +542,7 @@ data:extend(
         }
       }
     },
-    subgroup = "ammo",
+    subgroup = "KT_guns",
     order = "d[rocket-launcher]-c[atomic-bomb]",
     stack_size = 999
   },

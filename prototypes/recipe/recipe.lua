@@ -16,6 +16,99 @@ data:extend(
   },
   
   
+  {
+    type = "recipe",
+    name = "defender-capsule2",
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      {"steel-plate", 1},
+      {"explosives", 4}
+    },
+    result = "defender-capsule2",
+    result_count = 1
+  },
+  
+  
+  {
+    type = "recipe",
+    name = "claymor",
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      {"steel-plate", 1},
+      {"explosives", 4}
+    },
+    result = "claymor",
+    result_count = 4
+  },
+  
+  {
+    type = "recipe",
+    name = "laser-turret2",
+    enabled = false,
+    energy_required = 500,
+    ingredients =
+    {
+      {"steel-plate", 999},
+      {"electronic-circuit", 9999},
+	  {"advanced-circuit", 5000},
+	  {"iron-gear-wheel", 200},
+	  {"processing-unit", 2000},
+      {"battery", 999}
+    },
+    result = "laser-turret2"
+  },
+  
+  
+   {
+    type = "recipe",
+    name = "power-armor-mk3",
+    enabled = false,
+    energy_required = 25,
+    ingredients = {{ "effectivity-module-3", 10}, {"speed-module-3", 10}, {"processing-unit", 100}, {"steel-plate", 100}},
+    result = "power-armor-mk3",
+    requester_paste_multiplier = 1
+  },
+  
+  
+{
+    type = "recipe",
+    name = "APO",
+    normal =
+    {
+      enabled = false,
+      energy_required = 5,
+      ingredients =
+      {
+        {"engine-unit", 16},
+        {"steel-plate", 100},
+        {"iron-gear-wheel", 10},
+        {"advanced-circuit", 30}
+      },
+      result = "APO"
+    },
+  
+  },
+  
+  
+  
+  {
+    type = "recipe",
+    name = "minigun",
+	enabled = false,
+    energy_required = 10,
+    ingredients =
+    {
+      {"submachine-gun", 6},
+      {"iron-gear-wheel", 10},
+	  {"steel-plate", 5}
+    },
+	result_count = 1,
+    result = "minigun"
+  },
   
    {
     type = "recipe",
@@ -228,7 +321,7 @@ data:extend(
     name = "heat-furnace",
     energy_required = 3,
     enabled = false,
-    ingredients = {{"steel-plate", 20}, {"copper-plate", 100}, {"pipe", 10}},
+    ingredients = {{"steel-plate", 20},{"electronic-circuit", 200}, {"copper-plate", 200}, {"pipe", 10}},
     result = "heat-furnace"
   },
   {
@@ -239,6 +332,36 @@ data:extend(
     ingredients = {{"titanium-plate", 50},{"iron-plate", 50}, {"copper-plate", 50}, {"pipe", 10}},
     result = "steam-machine"
   },
+   {
+    type = "recipe",
+    name = "boiler-2",
+    energy_required = 10,
+    enabled = false,
+    ingredients = {{"steel-plate", 100}, {"copper-plate", 100}, {"pipe", 20}},
+    result = "boiler-2"
+  },
+  {
+    type = "recipe",
+    name = "boiler-3",
+    energy_required = 20,
+    enabled = true,
+    ingredients = {{"steel-plate", 100}, {"electronic-circuit", 200}, {"copper-plate", 400}, {"pipe", 20}},
+    result = "boiler-3"
+  },
+  
+    {
+    type = "recipe",
+    name = "nuclear-locomotive",
+    energy_required = 4,
+    enabled = false,
+    ingredients =
+    {
+      {"electronic-circuit", 10},
+      {"steel-plate", 30},
+	  {"nuclear-reactor", 1}
+    },
+    result = "nuclear-locomotive"
+  },
   
   
   
@@ -253,14 +376,69 @@ data:extend(
   
   
   
+  { -- Gunship
+    type = "recipe",
+    name = "gunship",
+    enabled = "false",
+    ingredients = 
+    {
+      {"electric-engine-unit",64},
+      {"steel-plate",200},
+      {"iron-plate",400},
+      {"electronic-circuit",40},
+			{"minigun",2},
+			{"rocket-launcher",5}
+    },
+    result = "gunship"
+  },
   
+  { -- Cargo Plane
+    type = "recipe",
+    name = "cargo-plane",
+    enabled = "false",
+    ingredients = 
+    {
+      {"electric-engine-unit",128},
+      {"steel-plate",400},
+      {"iron-plate",500},
+      {"advanced-circuit",20},
+    },
+    result = "cargo-plane"
+  },
   
+  { -- Jet
+    type = "recipe",
+    name = "jet",
+    enabled = "false",
+    ingredients = 
+    {
+      {"electric-engine-unit",256},
+      {"steel-plate",150},
+      {"iron-plate",100},
+      {"electronic-circuit",120},
+	  {"advanced-circuit",50},
+	  {"low-density-structure",50}
+    },
+    result = "jet"
+  },
   
-  
-  
-  
-  
-  
+  { -- Flying Fortress
+    type = "recipe",
+    name = "flying-fortress",
+    enabled = "false",
+    ingredients = 
+    {
+      {"electric-engine-unit",100},
+      {"steel-plate",800},
+      {"iron-plate",2000},
+      {"advanced-circuit",80},
+	  {"processing-unit", 40},
+			{"submachine-gun",15},
+			{"rocket-launcher",15},
+			{"explosive-cannon-shell", 100}
+    },
+    result = "flying-fortress"
+  },
   
   
   

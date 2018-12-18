@@ -15,14 +15,14 @@ data:extend(
         target_effects =
         {
             type = "damage",
-            damage = { amount = 50 , type = "physical"}
+            damage = { amount = 100 , type = "physical"}
         }
       }
     },
-    durability = 5000,
+    durability = 10000,
     subgroup = "tool",
     order = "a[mining]-b[steel-axe]",
-    speed = 20,
+    speed = 25,
     stack_size = 20
   }
 }

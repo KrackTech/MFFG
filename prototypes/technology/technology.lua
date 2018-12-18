@@ -272,6 +272,120 @@ data:extend(
   },
   
   
+  
+  
+  {
+    type = "technology",
+    name = "army",
+    icon_size = 128,
+    icon = "__MFFG__/graphics/technology/army.png",
+    effects =
+    {
+      {
+        type = "maximum-following-robots-count",
+        modifier = 1000,
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "defender-capsule2"
+      }
+    },
+    prerequisites = {"world-guard"},
+    unit =
+    {
+      count = 5000,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1},
+        {"military-science-pack", 1},
+        {"production-science-pack", 1},
+        {"high-tech-science-pack", 1}
+		
+      },
+	  time = 45
+    },
+    
+    order = "e-p-b-c"
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   {
+    type = "technology",
+    name = "planes",
+    icon_size = 512,
+    icon = "__MFFG__/graphics/technology/planes.png",
+    unit =
+    {
+      count = 1000,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1},
+        {"military-science-pack", 1},
+        {"high-tech-science-pack", 1}
+      },
+      time = 60
+    },
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "gunship"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "jet"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "flying-fortress"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "cargo-plane"
+      }
+	 
+    },
+    order = "e-b-d"
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   {
     type = "technology",
     name = "hydrogen-bomb",
@@ -335,8 +449,106 @@ data:extend(
   },
   
   
+  {
+    type = "technology",
+    name = "world-guard",
+    icon_size = 128,
+    icon = "__MFFG__/graphics/technology/world-guard.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "laser-turret2"
+      }
+    },
+    prerequisites = {"atomic-bomb", "artillery", "combat-robotics", "laser-turrets", "rocket-silo"},
+    unit =
+    {
+      count = 50000,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1},
+        {"military-science-pack", 1},
+        {"production-science-pack", 1},
+        {"high-tech-science-pack", 1}
+      },
+      time = 120
+    },
+    order = "e-a-b"
+  },
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    type = "technology",
+    name = "coal-liquefaction",
+    icon_size = 128,
+    icon = "__base__/graphics/technology/coal-liquefaction.png",
+    prerequisites = {"advanced-oil-processing"},
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "coal-liquefaction"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "coal-crystallization"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "coal-liquefaction2"
+      }
+    },
+    unit =
+    {
+      count = 200,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1},
+        {"production-science-pack", 1}
+      },
+      time = 30
+    },
+    order = "d-c"
+  },
   
   
   
@@ -387,6 +599,10 @@ data:extend(
       },
 	  {
         type = "unlock-recipe",
+        recipe = "nuclear-locomotive"
+      },
+	  {
+        type = "unlock-recipe",
         recipe = "heat-furnace"
       },
       {
@@ -424,7 +640,54 @@ data:extend(
   
   
   
-  
+  {
+    type = "technology",
+    name = "military-3",
+    icon_size = 128,
+    icon = "__base__/graphics/technology/military.png",
+    effects =
+    {
+    
+      {
+        type = "unlock-recipe",
+        recipe = "railgun"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "railgun-dart"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "poison-capsule"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "slowdown-capsule"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "minigun"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "combat-shotgun"
+      },
+    },
+    prerequisites = {"laser", "military-2"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1},
+        {"military-science-pack", 1}
+      },
+      time = 30
+    },
+    order = "e-a-c"
+  },
   
   
   
@@ -443,6 +706,10 @@ data:extend(
         type = "unlock-recipe",
         recipe = "steam-machine"
       },
+	  {
+        type = "unlock-recipe",
+        recipe = "boiler-2"
+      },
       {
         type = "unlock-recipe",
         recipe = "gold-plate-2"
@@ -450,6 +717,10 @@ data:extend(
 	   {
         type = "unlock-recipe",
         recipe = "iron-plate-2"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "steel-plate-2"
       },
 	   {
         type = "unlock-recipe",
@@ -473,6 +744,134 @@ data:extend(
     },
     order = "a-b-a",
   },
+  
+  
+  
+   {
+    type = "technology",
+    name = "military-4",
+    icon_size = 128,
+    icon = "__base__/graphics/technology/military.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "piercing-shotgun-shell"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "cluster-grenade"
+      },
+    },
+    prerequisites = {"military-3"},
+    unit =
+    {
+      count = 150,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1},
+        {"military-science-pack", 1},
+        {"high-tech-science-pack", 1}
+      },
+      time = 45
+    },
+    order = "e-a-e"
+  },
+  
+  
+  
+  
+  
+  
+   {
+    type = "technology",
+    name = "claymor",
+    icon_size = 128,
+    icon = "__MFFG__/graphics/technology/claymor.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "claymor"
+      }
+    },
+    prerequisites = {"land-mine"},
+    unit =
+    {
+      count = 200,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"military-science-pack", 1}
+      },
+      time = 60
+    },
+    order = "e-e"
+  },
+  
+  {
+    type = "technology",
+    name = "power-armor-3",
+    icon_size = 128,
+    icon = "__base__/graphics/technology/power-armor-mk2.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "power-armor-mk3"
+      }
+    },
+    prerequisites = {"power-armor-2", "power-armor-modules"},
+    unit =
+    {
+      count = 800,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1},
+        {"military-science-pack", 1},
+        {"high-tech-science-pack", 1}
+      },
+      time = 60
+    },
+    order = "g-c-b"
+  },
+  
+   {
+    type = "technology",
+    name = "APO",
+    icon_size = 128,
+    icon = "__base__/graphics/technology/tanks.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "APO"
+      }
+    },
+    prerequisites = {"tanks", "rocketry"},
+    unit =
+    {
+      count = 200,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1},
+        {"military-science-pack", 1},
+      },
+      time = 60
+    },
+    order = "e-c-c"
+  },
+ 
+  
+  
+  
   
   
   

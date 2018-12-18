@@ -477,6 +477,249 @@ data:extend(
   
   
   
+  
+   {
+    type = "combat-robot",
+    name = "defender2",
+    icon = "__base__/graphics/icons/defender.png",
+    icon_size = 32,
+    flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map", "not-repairable"},
+    resistances = { { type = "fire", percent = 95 } },
+    subgroup="capsule",
+    order="e-a-a",
+    max_health = 600,
+    alert_when_damaged = false,
+    collision_box = {{0, 0}, {0, 0}},
+    selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
+    distance_per_frame = 0.13,
+    time_to_live = 600 * 45,
+    follows_player = true,
+    friction = 0.005,
+    range_from_player = 10.0,
+    speed = 0.001,
+    destroy_action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        source_effects =
+        {
+            type = "create-entity",
+            entity_name = "explosion"
+        }
+      }
+    },
+    attack_parameters =
+    {
+      type = "projectile",
+      ammo_category = "bullet",
+      cooldown = 10,
+      projectile_center = {0, 1},
+      projectile_creation_distance = 0.6,
+      range = 10,
+      sound = make_light_gunshot_sounds(),
+      ammo_type =
+      {
+        category = "bullet",
+        action =
+        {
+          type = "direct",
+          action_delivery =
+          {
+            type = "instant",
+            source_effects =
+            {
+              type = "create-explosion",
+              entity_name = "explosion-gunshot-small"
+            },
+            target_effects =
+            {
+              {
+                type = "create-entity",
+                entity_name = "explosion-hit"
+              },
+              {
+                type = "damage",
+                damage = { amount = 10 , type = "physical"}
+              }
+            }
+          }
+        }
+      }
+    },
+    idle =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/defender-robot/defender-robot.png",
+          priority = "high",
+          line_length = 16,
+          width = 32,
+          height = 33,
+          frame_count = 1,
+          direction_count = 16,
+          shift = {0, 0.015625},
+          hr_version = {
+            filename = "__base__/graphics/entity/defender-robot/hr-defender-robot.png",
+            priority = "high",
+            line_length = 16,
+            width = 56,
+            height = 59,
+            frame_count = 1,
+            direction_count = 16,
+            shift = util.by_pixel(0, 0.25),
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/defender-robot/defender-robot-mask.png",
+          priority = "high",
+          line_length = 16,
+          width = 18,
+          height = 16,
+          frame_count = 1,
+          direction_count = 16,
+          shift = {0, -0.125},
+          apply_runtime_tint = true,
+          hr_version = {
+            filename = "__base__/graphics/entity/defender-robot/hr-defender-robot-mask.png",
+            priority = "high",
+            line_length = 16,
+            width = 28,
+            height = 21,
+            frame_count = 1,
+            direction_count = 16,
+            shift = util.by_pixel(0, -4.75),
+            apply_runtime_tint = true,
+            scale = 0.5
+          }
+        },
+      }
+    },
+    shadow_idle =
+    {
+      filename = "__base__/graphics/entity/defender-robot/defender-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 43,
+      height = 23,
+      frame_count = 1,
+      direction_count = 16,
+      shift = {0.859375, 0.609375},
+      hr_version = {
+        filename = "__base__/graphics/entity/defender-robot/hr-defender-robot-shadow.png",
+        priority = "high",
+        line_length = 16,
+        width = 88,
+        height = 50,
+        frame_count = 1,
+        direction_count = 16,
+        shift = util.by_pixel(25.5, 19),
+        scale = 0.5
+      }
+    },
+    in_motion =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/defender-robot/defender-robot.png",
+          priority = "high",
+          line_length = 16,
+          width = 32,
+          height = 33,
+          frame_count = 1,
+          direction_count = 16,
+          shift = {0, 0.015625},
+          y = 33,
+          hr_version = {
+            filename = "__base__/graphics/entity/defender-robot/hr-defender-robot.png",
+            priority = "high",
+            line_length = 16,
+            width = 56,
+            height = 59,
+            frame_count = 1,
+            direction_count = 16,
+            shift = util.by_pixel(0, 0.25),
+            y = 59,
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/defender-robot/defender-robot-mask.png",
+          priority = "high",
+          line_length = 16,
+          width = 18,
+          height = 16,
+          frame_count = 1,
+          direction_count = 16,
+          shift = {0, -0.125},
+          apply_runtime_tint = true,
+          y = 16,
+          hr_version = {
+            filename = "__base__/graphics/entity/defender-robot/hr-defender-robot-mask.png",
+            priority = "high",
+            line_length = 16,
+            width = 28,
+            height = 21,
+            frame_count = 1,
+            direction_count = 16,
+            shift = util.by_pixel(0, -4.75),
+            apply_runtime_tint = true,
+            y = 21,
+            scale = 0.5
+          }
+        },
+      }
+    },
+    shadow_in_motion =
+    {
+      filename = "__base__/graphics/entity/defender-robot/defender-robot-shadow.png",
+      priority = "high",
+      line_length = 16,
+      width = 43,
+      height = 23,
+      frame_count = 1,
+      direction_count = 16,
+      shift = {0.859375, 0.609375},
+      hr_version = {
+        filename = "__base__/graphics/entity/defender-robot/hr-defender-robot-shadow.png",
+        priority = "high",
+        line_length = 16,
+        width = 88,
+        height = 50,
+        frame_count = 1,
+        direction_count = 16,
+        shift = util.by_pixel(25.5, 19),
+        scale = 0.5
+      }
+    }
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   {
     type = "assembling-machine",
     name = "assembling-machine-2",
@@ -1687,7 +1930,7 @@ data:extend(
       }
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    production = "600kW"
+    production = "800kW"
   },
   {
     type = "locomotive",
@@ -4362,12 +4605,885 @@ data:extend(
   
   
   
+    {
+    type = "boiler",
+    name = "boiler-2",
+    icon = "__base__/graphics/icons/boiler.png",
+    icon_size = 32,
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "boiler-2"},
+    max_health = 200,
+    corpse = "small-remnants",
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    mode = "output-to-separate-pipe",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 90
+      },
+      {
+        type = "explosion",
+        percent = 30
+      },
+      {
+        type = "impact",
+        percent = 30
+      }
+    },
+    collision_box = {{-1.29, -0.79}, {1.29, 0.79}},
+    selection_box = {{-1.5, -1}, {1.5, 1}},
+    target_temperature = 165,
+    fluid_box =
+    {
+      base_area = 1,
+      height = 2,
+      base_level = -1,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        {type = "input-output", position = {-2, 0.5}},
+        {type = "input-output", position = {2, 0.5}}
+      },
+      production_type = "input-output",
+      filter = "water"
+    },
+    output_fluid_box =
+    {
+      base_area = 1,
+      height = 2,
+      base_level = 1,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        {type = "output", position = {0, -1.5}}
+      },
+      production_type = "output",
+      filter = "steam"
+    },
+    energy_consumption = "2.3MW",
+    energy_source =
+    {
+      type = "burner",
+      fuel_category = "chemical",
+      effectivity = 0.99,
+      fuel_inventory_size = 3,
+      emissions = 0.1 / 6.5,
+      smoke =
+      {
+        {
+          name = "smoke",
+          north_position = util.by_pixel(-38, -47.5),
+          south_position = util.by_pixel(38.5, -32),
+          east_position = util.by_pixel(20, -70),
+          west_position = util.by_pixel(-19, -8.5),
+          frequency = 15,
+          starting_vertical_speed = 0.0,
+          starting_frame_deviation = 60
+        }
+      }
+    },
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/boiler.ogg",
+        volume = 0.8
+      },
+      max_sounds_per_type = 3
+    },
+
+    structure =
+    {
+      north =
+      {
+        layers =
+        {
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-N-idle.png",
+            priority = "extra-high",
+            width = 131,
+            height = 108,
+            shift = util.by_pixel(-0.5, 4),
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-N-idle.png",
+              priority = "extra-high",
+              width = 269,
+              height = 221,
+              shift = util.by_pixel(-1.25, 5.25),
+              scale = 0.5
+            }
+          },
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-N-shadow.png",
+            priority = "extra-high",
+            width = 137,
+            height = 82,
+            shift = util.by_pixel(20.5, 9),
+            draw_as_shadow = true,
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-N-shadow.png",
+              priority = "extra-high",
+              width = 274,
+              height = 164,
+              scale = 0.5,
+              shift = util.by_pixel(20.5, 9),
+              draw_as_shadow = true,
+            }
+          }
+        }
+      },
+      east =
+      {
+        layers =
+        {
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-E-idle.png",
+            priority = "extra-high",
+            width = 105,
+            height = 147,
+            shift = util.by_pixel(-3.5, -0.5),
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-E-idle.png",
+              priority = "extra-high",
+              width = 216,
+              height = 301,
+              shift = util.by_pixel(-3, 1.25),
+              scale = 0.5
+            }
+          },
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-E-shadow.png",
+            priority = "extra-high",
+            width = 92,
+            height = 97,
+            shift = util.by_pixel(30, 9.5),
+            draw_as_shadow = true,
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-E-shadow.png",
+              priority = "extra-high",
+              width = 184,
+              height = 194,
+              scale = 0.5,
+              shift = util.by_pixel(30, 9.5),
+              draw_as_shadow = true,
+            }
+          }
+        }
+      },
+      south =
+      {
+        layers =
+        {
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-S-idle.png",
+            priority = "extra-high",
+            width = 128,
+            height = 95,
+            shift = util.by_pixel(3, 12.5),
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-S-idle.png",
+              priority = "extra-high",
+              width = 260,
+              height = 192,
+              shift = util.by_pixel(4, 13),
+              scale = 0.5
+            }
+          },
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-S-shadow.png",
+            priority = "extra-high",
+            width = 156,
+            height = 66,
+            shift = util.by_pixel(30, 16),
+            draw_as_shadow = true,
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-S-shadow.png",
+              priority = "extra-high",
+              width = 311,
+              height = 131,
+              scale = 0.5,
+              shift = util.by_pixel(29.75, 15.75),
+              draw_as_shadow = true,
+            }
+          }
+        }
+      },
+      west =
+      {
+        layers =
+        {
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-W-idle.png",
+            priority = "extra-high",
+            width = 96,
+            height = 132,
+            shift = util.by_pixel(1, 5),
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-W-idle.png",
+              priority = "extra-high",
+              width = 196,
+              height = 273,
+              shift = util.by_pixel(1.5, 7.75),
+              scale = 0.5
+            }
+          },
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-W-shadow.png",
+            priority = "extra-high",
+            width = 103,
+            height = 109,
+            shift = util.by_pixel(19.5, 6.5),
+            draw_as_shadow = true,
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-W-shadow.png",
+              priority = "extra-high",
+              width = 206,
+              height = 218,
+              scale = 0.5,
+              shift = util.by_pixel(19.5, 6.5),
+              draw_as_shadow = true,
+            }
+          }
+        }
+      }
+    },
+
+    patch =
+    {
+      east =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-E-patch.png",
+        priority = "extra-high",
+        width = 3,
+        height = 17,
+        shift = util.by_pixel(33.5, -13.5),
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-E-patch.png",
+          width = 6,
+          height = 36,
+          shift = util.by_pixel(33.5, -13.5),
+          scale = 0.5
+        }
+      },
+    },
+
+    fire_flicker_enabled = true,
+    fire =
+    {
+      north =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-N-fire.png",
+        priority = "extra-high",
+        frame_count = 64,
+        line_length = 8,
+        width = 12,
+        height = 13,
+        animation_speed = 0.5,
+        shift = util.by_pixel(0, -8.5),
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-N-fire.png",
+          priority = "extra-high",
+          frame_count = 64,
+          line_length = 8,
+          width = 26,
+          height = 26,
+          animation_speed = 0.5,
+          shift = util.by_pixel(0, -8.5),
+          scale = 0.5
+        }
+      },
+      east =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-E-fire.png",
+        priority = "extra-high",
+        frame_count = 64,
+        line_length = 8,
+        width = 14,
+        height = 14,
+        animation_speed = 0.5,
+        shift = util.by_pixel(-10, -22),
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-E-fire.png",
+          priority = "extra-high",
+          frame_count = 64,
+          line_length = 8,
+          width = 28,
+          height = 28,
+          animation_speed = 0.5,
+          shift = util.by_pixel(-9.5, -22),
+          scale = 0.5
+        }
+      },
+      south =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-S-fire.png",
+        priority = "extra-high",
+        frame_count = 64,
+        line_length = 8,
+        width = 12,
+        height = 9,
+        animation_speed = 0.5,
+        shift = util.by_pixel(-1, -26.5),
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-S-fire.png",
+          priority = "extra-high",
+          frame_count = 64,
+          line_length = 8,
+          width = 26,
+          height = 16,
+          animation_speed = 0.5,
+          shift = util.by_pixel(-1, -26.5),
+          scale = 0.5
+        }
+      },
+      west =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-W-fire.png",
+        priority = "extra-high",
+        frame_count = 64,
+        line_length = 8,
+        width = 14,
+        height = 14,
+        animation_speed = 0.5,
+        shift = util.by_pixel(13, -23),
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-W-fire.png",
+          priority = "extra-high",
+          frame_count = 64,
+          line_length = 8,
+          width = 30,
+          height = 29,
+          animation_speed = 0.5,
+          shift = util.by_pixel(13, -23.25),
+          scale = 0.5
+        }
+      }
+    },
+
+    fire_glow_flicker_enabled = true,
+
+    fire_glow =
+    {
+      north =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-N-light.png",
+        priority = "extra-high",
+        frame_count = 1,
+        width = 100,
+        height = 87,
+        shift = util.by_pixel(-1, -6.5),
+        blend_mode = "additive",
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-N-light.png",
+          priority = "extra-high",
+          frame_count = 1,
+          width = 200,
+          height = 173,
+          shift = util.by_pixel(-1, -6.75),
+          blend_mode = "additive",
+          scale = 0.5
+        }
+      },
+      east =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-E-light.png",
+        priority = "extra-high",
+        frame_count = 1,
+        width = 70,
+        height = 122,
+        shift = util.by_pixel(0, -13),
+        blend_mode = "additive",
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-E-light.png",
+          priority = "extra-high",
+          frame_count = 1,
+          width = 139,
+          height = 244,
+          shift = util.by_pixel(0.25, -13),
+          blend_mode = "additive",
+          scale = 0.5
+        }
+      },
+      south =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-S-light.png",
+        priority = "extra-high",
+        frame_count = 1,
+        width = 100,
+        height = 81,
+        shift = util.by_pixel(1, 5.5),
+        blend_mode = "additive",
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-S-light.png",
+          priority = "extra-high",
+          frame_count = 1,
+          width = 200,
+          height = 162,
+          shift = util.by_pixel(1, 5.5),
+          blend_mode = "additive",
+          scale = 0.5
+        }
+      },
+      west =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-W-light.png",
+        priority = "extra-high",
+        frame_count = 1,
+        width = 68,
+        height = 109,
+        shift = util.by_pixel(2, -6.5),
+        blend_mode = "additive",
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-W-light.png",
+          priority = "extra-high",
+          frame_count = 1,
+          width = 136,
+          height = 217,
+          shift = util.by_pixel(2, -6.25),
+          blend_mode = "additive",
+          scale = 0.5
+        }
+      }
+    },
+    burning_cooldown = 20
+  },
+
   
   
   
   
   
-  
+    {
+    type = "boiler",
+    name = "boiler-3",
+    icon = "__base__/graphics/icons/boiler.png",
+    icon_size = 32,
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "boiler-2"},
+    max_health = 200,
+    corpse = "small-remnants",
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    mode = "output-to-separate-pipe",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 90
+      },
+      {
+        type = "explosion",
+        percent = 30
+      },
+      {
+        type = "impact",
+        percent = 30
+      }
+    },
+    collision_box = {{-1.29, -0.79}, {1.29, 0.79}},
+    selection_box = {{-1.5, -1}, {1.5, 1}},
+    target_temperature = 165,
+    fluid_box =
+    {
+      base_area = 1,
+      height = 2,
+      base_level = -1,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        {type = "input-output", position = {-2, 0.5}},
+        {type = "input-output", position = {2, 0.5}}
+      },
+      production_type = "input-output",
+      filter = "water"
+    },
+    output_fluid_box =
+    {
+      base_area = 1,
+      height = 2,
+      base_level = 1,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        {type = "output", position = {0, -1.5}}
+      },
+      production_type = "output",
+      filter = "steam"
+    },
+    energy_consumption = "1.0MW",
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions = 0.04 / 2.5
+    },
+    energy_usage = "500kW",
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/boiler.ogg",
+        volume = 0.8
+      },
+      max_sounds_per_type = 3
+    },
+
+    structure =
+    {
+      north =
+      {
+        layers =
+        {
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-N-idle.png",
+            priority = "extra-high",
+            width = 131,
+            height = 108,
+            shift = util.by_pixel(-0.5, 4),
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-N-idle.png",
+              priority = "extra-high",
+              width = 269,
+              height = 221,
+              shift = util.by_pixel(-1.25, 5.25),
+              scale = 0.5
+            }
+          },
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-N-shadow.png",
+            priority = "extra-high",
+            width = 137,
+            height = 82,
+            shift = util.by_pixel(20.5, 9),
+            draw_as_shadow = true,
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-N-shadow.png",
+              priority = "extra-high",
+              width = 274,
+              height = 164,
+              scale = 0.5,
+              shift = util.by_pixel(20.5, 9),
+              draw_as_shadow = true,
+            }
+          }
+        }
+      },
+      east =
+      {
+        layers =
+        {
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-E-idle.png",
+            priority = "extra-high",
+            width = 105,
+            height = 147,
+            shift = util.by_pixel(-3.5, -0.5),
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-E-idle.png",
+              priority = "extra-high",
+              width = 216,
+              height = 301,
+              shift = util.by_pixel(-3, 1.25),
+              scale = 0.5
+            }
+          },
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-E-shadow.png",
+            priority = "extra-high",
+            width = 92,
+            height = 97,
+            shift = util.by_pixel(30, 9.5),
+            draw_as_shadow = true,
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-E-shadow.png",
+              priority = "extra-high",
+              width = 184,
+              height = 194,
+              scale = 0.5,
+              shift = util.by_pixel(30, 9.5),
+              draw_as_shadow = true,
+            }
+          }
+        }
+      },
+      south =
+      {
+        layers =
+        {
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-S-idle.png",
+            priority = "extra-high",
+            width = 128,
+            height = 95,
+            shift = util.by_pixel(3, 12.5),
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-S-idle.png",
+              priority = "extra-high",
+              width = 260,
+              height = 192,
+              shift = util.by_pixel(4, 13),
+              scale = 0.5
+            }
+          },
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-S-shadow.png",
+            priority = "extra-high",
+            width = 156,
+            height = 66,
+            shift = util.by_pixel(30, 16),
+            draw_as_shadow = true,
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-S-shadow.png",
+              priority = "extra-high",
+              width = 311,
+              height = 131,
+              scale = 0.5,
+              shift = util.by_pixel(29.75, 15.75),
+              draw_as_shadow = true,
+            }
+          }
+        }
+      },
+      west =
+      {
+        layers =
+        {
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-W-idle.png",
+            priority = "extra-high",
+            width = 96,
+            height = 132,
+            shift = util.by_pixel(1, 5),
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-W-idle.png",
+              priority = "extra-high",
+              width = 196,
+              height = 273,
+              shift = util.by_pixel(1.5, 7.75),
+              scale = 0.5
+            }
+          },
+          {
+            filename = "__base__/graphics/entity/boiler/boiler-W-shadow.png",
+            priority = "extra-high",
+            width = 103,
+            height = 109,
+            shift = util.by_pixel(19.5, 6.5),
+            draw_as_shadow = true,
+            hr_version = {
+              filename = "__base__/graphics/entity/boiler/hr-boiler-W-shadow.png",
+              priority = "extra-high",
+              width = 206,
+              height = 218,
+              scale = 0.5,
+              shift = util.by_pixel(19.5, 6.5),
+              draw_as_shadow = true,
+            }
+          }
+        }
+      }
+    },
+
+    patch =
+    {
+      east =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-E-patch.png",
+        priority = "extra-high",
+        width = 3,
+        height = 17,
+        shift = util.by_pixel(33.5, -13.5),
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-E-patch.png",
+          width = 6,
+          height = 36,
+          shift = util.by_pixel(33.5, -13.5),
+          scale = 0.5
+        }
+      },
+    },
+
+    fire_flicker_enabled = true,
+    fire =
+    {
+      north =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-N-fire.png",
+        priority = "extra-high",
+        frame_count = 64,
+        line_length = 8,
+        width = 12,
+        height = 13,
+        animation_speed = 0.5,
+        shift = util.by_pixel(0, -8.5),
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-N-fire.png",
+          priority = "extra-high",
+          frame_count = 64,
+          line_length = 8,
+          width = 26,
+          height = 26,
+          animation_speed = 0.5,
+          shift = util.by_pixel(0, -8.5),
+          scale = 0.5
+        }
+      },
+      east =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-E-fire.png",
+        priority = "extra-high",
+        frame_count = 64,
+        line_length = 8,
+        width = 14,
+        height = 14,
+        animation_speed = 0.5,
+        shift = util.by_pixel(-10, -22),
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-E-fire.png",
+          priority = "extra-high",
+          frame_count = 64,
+          line_length = 8,
+          width = 28,
+          height = 28,
+          animation_speed = 0.5,
+          shift = util.by_pixel(-9.5, -22),
+          scale = 0.5
+        }
+      },
+      south =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-S-fire.png",
+        priority = "extra-high",
+        frame_count = 64,
+        line_length = 8,
+        width = 12,
+        height = 9,
+        animation_speed = 0.5,
+        shift = util.by_pixel(-1, -26.5),
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-S-fire.png",
+          priority = "extra-high",
+          frame_count = 64,
+          line_length = 8,
+          width = 26,
+          height = 16,
+          animation_speed = 0.5,
+          shift = util.by_pixel(-1, -26.5),
+          scale = 0.5
+        }
+      },
+      west =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-W-fire.png",
+        priority = "extra-high",
+        frame_count = 64,
+        line_length = 8,
+        width = 14,
+        height = 14,
+        animation_speed = 0.5,
+        shift = util.by_pixel(13, -23),
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-W-fire.png",
+          priority = "extra-high",
+          frame_count = 64,
+          line_length = 8,
+          width = 30,
+          height = 29,
+          animation_speed = 0.5,
+          shift = util.by_pixel(13, -23.25),
+          scale = 0.5
+        }
+      }
+    },
+
+    fire_glow_flicker_enabled = true,
+
+    fire_glow =
+    {
+      north =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-N-light.png",
+        priority = "extra-high",
+        frame_count = 1,
+        width = 100,
+        height = 87,
+        shift = util.by_pixel(-1, -6.5),
+        blend_mode = "additive",
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-N-light.png",
+          priority = "extra-high",
+          frame_count = 1,
+          width = 200,
+          height = 173,
+          shift = util.by_pixel(-1, -6.75),
+          blend_mode = "additive",
+          scale = 0.5
+        }
+      },
+      east =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-E-light.png",
+        priority = "extra-high",
+        frame_count = 1,
+        width = 70,
+        height = 122,
+        shift = util.by_pixel(0, -13),
+        blend_mode = "additive",
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-E-light.png",
+          priority = "extra-high",
+          frame_count = 1,
+          width = 139,
+          height = 244,
+          shift = util.by_pixel(0.25, -13),
+          blend_mode = "additive",
+          scale = 0.5
+        }
+      },
+      south =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-S-light.png",
+        priority = "extra-high",
+        frame_count = 1,
+        width = 100,
+        height = 81,
+        shift = util.by_pixel(1, 5.5),
+        blend_mode = "additive",
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-S-light.png",
+          priority = "extra-high",
+          frame_count = 1,
+          width = 200,
+          height = 162,
+          shift = util.by_pixel(1, 5.5),
+          blend_mode = "additive",
+          scale = 0.5
+        }
+      },
+      west =
+      {
+        filename = "__base__/graphics/entity/boiler/boiler-W-light.png",
+        priority = "extra-high",
+        frame_count = 1,
+        width = 68,
+        height = 109,
+        shift = util.by_pixel(2, -6.5),
+        blend_mode = "additive",
+        hr_version = {
+          filename = "__base__/graphics/entity/boiler/hr-boiler-W-light.png",
+          priority = "extra-high",
+          frame_count = 1,
+          width = 136,
+          height = 217,
+          shift = util.by_pixel(2, -6.25),
+          blend_mode = "additive",
+          scale = 0.5
+        }
+      }
+    },
+    burning_cooldown = 20
+  },
+
   
   
   
@@ -4596,11 +5712,547 @@ data:extend(
  
  
  
+  {
+    type = "car",
+    name = "APO",
+    icon = "__base__/graphics/icons/tank.png",
+    icon_size = 32,
+    flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
+    minable = {mining_time = 1, result = "APO"},
+    mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
+    max_health = 1000,
+    corpse = "medium-remnants",
+    dying_explosion = "medium-explosion",
+    alert_icon_shift = util.by_pixel(-4, -13),
+    immune_to_tree_impacts = true,
+    energy_per_hit_point = 0.5,
+    resistances =
+    {
+      {
+        type = "fire",
+        decrease = 15,
+        percent = 60
+      },
+      {
+        type = "physical",
+        decrease = 15,
+        percent = 60
+      },
+      {
+        type = "impact",
+        decrease = 50,
+        percent = 80
+      },
+      {
+        type = "explosion",
+        decrease = 15,
+        percent = 70
+      },
+      {
+        type = "acid",
+        decrease = 15,
+        percent = 50
+      }
+    },
+    collision_box = {{-0.9, -1.3}, {0.9, 1.3}},
+    selection_box = {{-0.9, -1.3}, {0.9, 1.3}},
+    drawing_box = {{-1.8, -1.8}, {1.8, 1.5}},
+    effectivity = 0.6,
+    braking_power = "400kW",
+    burner =
+    {
+      fuel_category = "chemical",
+      effectivity = 0.80,
+      fuel_inventory_size = 2,
+      smoke =
+      {
+        {
+          name = "tank-smoke",
+          deviation = {0.25, 0.25},
+          frequency = 50,
+          position = {0, 1.5},
+          starting_frame = 0,
+          starting_frame_deviation = 60
+        }
+      }
+    },
+    consumption = "600kW",
+    terrain_friction_modifier = 0.2,
+    friction = 0.002,
+    light =
+    {
+      {
+        type = "oriented",
+        minimum_darkness = 0.3,
+        picture =
+        {
+          filename = "__core__/graphics/light-cone.png",
+          priority = "extra-high",
+          flags = { "light" },
+          scale = 2,
+          width = 200,
+          height = 200,
+        },
+        shift = {-0.6, -14},
+        size = 2,
+        intensity = 0.6,
+        color = {r = 0.9, g = 1.0, b = 1.0}
+      },
+      {
+        type = "oriented",
+        minimum_darkness = 0.3,
+        picture =
+        {
+          filename = "__core__/graphics/light-cone.png",
+          priority = "extra-high",
+          flags = { "light" },
+          scale = 2,
+          width = 200,
+          height = 200
+        },
+        shift = {0.6, -14},
+        size = 2,
+        intensity = 0.6,
+        color = {r = 0.9, g = 1.0, b = 1.0}
+      }
+    },
+    animation =
+    {
+      layers =
+      {
+        {
+          priority = "low",
+          width = 135,
+          height = 106,
+          frame_count = 2,
+          direction_count = 64,
+          shift = util.by_pixel(-4.5, -10),
+          animation_speed = 8,
+          max_advance = 1,
+          stripes =
+          {
+            {
+             filename = "__base__/graphics/entity/tank/tank-base-1.png",
+             width_in_frames = 2,
+             height_in_frames = 16,
+            },
+            {
+             filename = "__base__/graphics/entity/tank/tank-base-2.png",
+             width_in_frames = 2,
+             height_in_frames = 16,
+            },
+            {
+             filename = "__base__/graphics/entity/tank/tank-base-3.png",
+             width_in_frames = 2,
+             height_in_frames = 16,
+            },
+            {
+             filename = "__base__/graphics/entity/tank/tank-base-4.png",
+             width_in_frames = 2,
+             height_in_frames = 16,
+            }
+          },
+          hr_version = {
+            priority = "low",
+            width = 269,
+            height = 212,
+            frame_count = 2,
+            direction_count = 64,
+            shift = util.by_pixel(-4.75, -10),
+            animation_speed = 8,
+            max_advance = 1,
+            stripes =
+            {
+              {
+               filename = "__base__/graphics/entity/tank/hr-tank-base-1.png",
+               width_in_frames = 2,
+               height_in_frames = 16,
+              },
+              {
+               filename = "__base__/graphics/entity/tank/hr-tank-base-2.png",
+               width_in_frames = 2,
+               height_in_frames = 16,
+              },
+              {
+               filename = "__base__/graphics/entity/tank/hr-tank-base-3.png",
+               width_in_frames = 2,
+               height_in_frames = 16,
+              },
+              {
+               filename = "__base__/graphics/entity/tank/hr-tank-base-4.png",
+               width_in_frames = 2,
+               height_in_frames = 16,
+              }
+            },
+            scale = 0.5
+          }
+        },
+        {
+          priority = "low",
+          width = 104,
+          height = 84,
+          frame_count = 2,
+          apply_runtime_tint = true,
+          direction_count = 64,
+          shift = util.by_pixel(-5, -21),
+          max_advance = 1,
+          line_length = 2,
+          stripes = util.multiplystripes(2,
+          {
+            {
+              filename = "__base__/graphics/entity/tank/tank-base-mask-1.png",
+              width_in_frames = 1,
+              height_in_frames = 22,
+            },
+            {
+              filename = "__base__/graphics/entity/tank/tank-base-mask-2.png",
+              width_in_frames = 1,
+              height_in_frames = 22,
+            },
+            {
+              filename = "__base__/graphics/entity/tank/tank-base-mask-3.png",
+              width_in_frames = 1,
+              height_in_frames = 20,
+            },
+          }),
+          hr_version =
+          {
+            priority = "low",
+            width = 207,
+            height = 166,
+            frame_count = 2,
+            apply_runtime_tint = true,
+            direction_count = 64,
+            shift = util.by_pixel(-4.75, -21),
+            max_advance = 1,
+            line_length = 2,
+            stripes = util.multiplystripes(2,
+            {
+              {
+                filename = "__base__/graphics/entity/tank/hr-tank-base-mask-1.png",
+                width_in_frames = 1,
+                height_in_frames = 22,
+              },
+              {
+                filename = "__base__/graphics/entity/tank/hr-tank-base-mask-2.png",
+                width_in_frames = 1,
+                height_in_frames = 22,
+              },
+              {
+                filename = "__base__/graphics/entity/tank/hr-tank-base-mask-3.png",
+                width_in_frames = 1,
+                height_in_frames = 20,
+              },
+            }),
+            scale = 0.5
+          }
+        },
+        {
+          priority = "low",
+          width = 151,
+          height = 98,
+          frame_count = 2,
+          draw_as_shadow = true,
+          direction_count = 64,
+          shift = util.by_pixel(17.5, 7),
+          max_advance = 1,
+          stripes = util.multiplystripes(2,
+          {
+           {
+            filename = "__base__/graphics/entity/tank/tank-base-shadow-1.png",
+            width_in_frames = 1,
+            height_in_frames = 16,
+           },
+           {
+            filename = "__base__/graphics/entity/tank/tank-base-shadow-2.png",
+            width_in_frames = 1,
+            height_in_frames = 16,
+           },
+           {
+            filename = "__base__/graphics/entity/tank/tank-base-shadow-3.png",
+            width_in_frames = 1,
+            height_in_frames = 16,
+           },
+           {
+            filename = "__base__/graphics/entity/tank/tank-base-shadow-4.png",
+            width_in_frames = 1,
+            height_in_frames = 16,
+           }
+          }),
+          hr_version =
+          {
+            priority = "low",
+            width = 301,
+            height = 194,
+            frame_count = 2,
+            draw_as_shadow = true,
+            direction_count = 64,
+            shift = util.by_pixel(17.75, 7),
+            max_advance = 1,
+            stripes = util.multiplystripes(2,
+            {
+             {
+              filename = "__base__/graphics/entity/tank/hr-tank-base-shadow-1.png",
+              width_in_frames = 1,
+              height_in_frames = 16,
+             },
+             {
+              filename = "__base__/graphics/entity/tank/hr-tank-base-shadow-2.png",
+              width_in_frames = 1,
+              height_in_frames = 16,
+             },
+             {
+              filename = "__base__/graphics/entity/tank/hr-tank-base-shadow-3.png",
+              width_in_frames = 1,
+              height_in_frames = 16,
+             },
+             {
+              filename = "__base__/graphics/entity/tank/hr-tank-base-shadow-4.png",
+              width_in_frames = 1,
+              height_in_frames = 16,
+             }
+            }),
+            scale = 0.5
+          }
+        }
+      }
+    },
+    turret_animation =
+    {
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/tank/tank-turret.png",
+          priority = "low",
+          line_length = 8,
+          width = 90,
+          height = 67,
+          frame_count = 1,
+          direction_count = 64,
+          shift = util.by_pixel(-5, -34.5),
+          animation_speed = 8,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/tank/hr-tank-turret.png",
+            priority = "low",
+            line_length = 8,
+            width = 179,
+            height = 132,
+            frame_count = 1,
+            direction_count = 64,
+            shift = util.by_pixel(-4.75, -34.5),
+            animation_speed = 8,
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/tank/tank-turret-mask.png",
+          priority = "low",
+          line_length = 8,
+          width = 36,
+          height = 33,
+          frame_count = 1,
+          apply_runtime_tint = true,
+          direction_count = 64,
+          shift = util.by_pixel(-5, -35.5),
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/tank/hr-tank-turret-mask.png",
+            priority = "low",
+            line_length = 8,
+            width = 72,
+            height = 66,
+            frame_count = 1,
+            apply_runtime_tint = true,
+            direction_count = 64,
+            shift = util.by_pixel(-5, -35.5),
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/tank/tank-turret-shadow.png",
+          priority = "low",
+          line_length = 8,
+          width = 97,
+          height = 67,
+          frame_count = 1,
+          draw_as_shadow = true,
+          direction_count = 64,
+          shift = util.by_pixel(51.5, 6.5),
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/tank/hr-tank-turret-shadow.png",
+            priority = "low",
+            line_length = 8,
+            width = 193,
+            height = 134,
+            frame_count = 1,
+            draw_as_shadow = true,
+            direction_count = 64,
+            shift = util.by_pixel(51.25, 6.5),
+            scale = 0.5
+          }
+        }
+      }
+    },
+    turret_rotation_speed = 0.35 / 60,
+    turret_return_timeout = 300,
+    stop_trigger_speed = 0.2,
+    sound_no_fuel =
+    {
+      {
+        filename = "__base__/sound/fight/tank-no-fuel-1.ogg",
+        volume = 0.6
+      },
+    },
+    stop_trigger =
+    {
+      {
+        type = "play-sound",
+        sound =
+        {
+          {
+            filename = "__base__/sound/car-breaks.ogg",
+            volume = 0.6
+          },
+        }
+      },
+    },
+    sound_minimum_speed = 0.15;
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/fight/tank-engine.ogg",
+        volume = 0.6
+      },
+      activate_sound =
+      {
+        filename = "__base__/sound/fight/tank-engine-start.ogg",
+        volume = 0.6
+      },
+      deactivate_sound =
+      {
+        filename = "__base__/sound/fight/tank-engine-stop.ogg",
+        volume = 0.6
+      },
+      match_speed_to_activity = true,
+    },
+    open_sound = { filename = "__base__/sound/car-door-open.ogg", volume=0.7 },
+    close_sound = { filename = "__base__/sound/car-door-close.ogg", volume = 0.7 },
+    rotation_speed = 0.0035,
+    tank_driving = true,
+    weight = 5000,
+    inventory_size = 40,
+    guns = { "tank-rocket-launcher", "tank-rocket-launcher", "tank-rocket-launcher","tank-rocket-launcher", "tank-rocket-launcher", "tank-rocket-launcher","tank-rocket-launcher", "tank-rocket-launcher" },
+  },
+ 
+  
  
  
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  {
+    type = "land-mine",
+    name = "claymor",
+    icon = "__MFFG__/graphics/icons/claymor.png",
+    icon_size = 32,
+    flags =
+    {
+      "placeable-player",
+      "placeable-enemy",
+      "player-creation",
+      "placeable-off-grid",
+      "not-on-map"
+    },
+    minable = {mining_time = 1, result = "claymor"},
+    mined_sound = { filename = "__core__/sound/deconstruct-small.ogg" },
+    max_health = 1,
+    corpse = "small-remnants",
+    collision_box = {{-0.4,-0.4}, {0.4, 0.4}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    dying_explosion = "explosion-hit",
+    picture_safe =
+    {
+      filename = "__MFFG__/graphics/entity/claymor/land-mine.png",
+      priority = "medium",
+      width = 32,
+      height = 32
+    },
+    picture_set =
+    {
+      filename = "__MFFG__/graphics/entity/claymor/land-mine-set.png",
+      priority = "medium",
+      width = 32,
+      height = 32
+    },
+    picture_set_enemy =
+    {
+      filename = "__MFFG__/graphics/entity/claymor/land-mine-set-enemy.png",
+      priority = "medium",
+      width = 32,
+      height = 32
+    },
+    trigger_radius = 2,
+    ammo_category = "claymor",
+    action =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        source_effects =
+        {
+          {
+            type = "nested-result",
+            affects_target = true,
+            action =
+            {
+              type = "area",
+              radius = 6,
+              force = "enemy",
+              action_delivery =
+              {
+                type = "instant",
+                target_effects =
+                {
+                  {
+                    type = "damage",
+                    damage = { amount = 2000, type = "explosion"}
+                  },
+                  {
+                    type = "create-sticker",
+                    sticker = "stun-sticker"
+                  }
+                }
+              }
+            },
+          },
+          {
+            type = "create-entity",
+            entity_name = "explosion"
+          },
+          {
+            type = "damage",
+            damage = { amount = 4000, type = "explosion"}
+          }
+        }
+      }
+    },
+  },
+  
  
  
  

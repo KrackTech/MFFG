@@ -21,6 +21,15 @@ data:extend(
   },
   {
     type = "recipe",
+    name = "steel-plate-2",
+    category = "steam-machine",
+	enabled = true,
+    energy_required = 5,
+    ingredients = {{"iron-plate", 5},{type="fluid", name="steam", amount=100}},
+    result = "steel-plate"
+  },
+  {
+    type = "recipe",
     name = "copper-plate-2",
     category = "steam-machine",
 	enabled = false,

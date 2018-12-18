@@ -347,7 +347,7 @@ data:extend(
     icon = "__base__/graphics/icons/loader.png",
     icon_size = 32,
     flags = {"goes-to-quickbar", "hidden"},
-    subgroup = "belt",
+    subgroup = "KT_log",
     order = "d[loader]-a[basic-loader]",
     place_result = "loader",
     stack_size = 100
@@ -358,7 +358,7 @@ data:extend(
     icon = "__base__/graphics/icons/fast-loader.png",
     icon_size = 32,
     flags = {"goes-to-quickbar", "hidden"},
-    subgroup = "belt",
+    subgroup = "KT_log",
     order = "d[loader]-b[fast-loader]",
     place_result = "fast-loader",
     stack_size = 100
@@ -369,7 +369,7 @@ data:extend(
     icon = "__base__/graphics/icons/express-loader.png",
     icon_size = 32,
     flags = {"goes-to-quickbar", "hidden"},
-    subgroup = "belt",
+    subgroup = "KT_log",
     order = "d[loader]-c[express-loader]",
     place_result = "express-loader",
     stack_size = 100
@@ -906,7 +906,7 @@ data:extend(
     icon = "__base__/graphics/icons/electric-furnace.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
-    subgroup = "energy",
+    subgroup = "KT_machine",
     order = "f[nuclear-energy]-b[heat-furnace]",
     place_result = "heat-furnace",
     stack_size = 50
@@ -917,10 +917,82 @@ data:extend(
     icon = "__base__/graphics/icons/assembling-machine-2.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
-    subgroup = "energy",
+    subgroup = "KT_machine",
     order = "b[steam-machine]",
     place_result = "steam-machine",
     stack_size = 50
+  },
+  {
+    type = "item",
+    name = "boiler-2",
+    icon = "__base__/graphics/icons/boiler.png",
+    icon_size = 32,
+    flags = {"goes-to-quickbar"},
+    subgroup = "KT_machine",
+    order = "b[boiler-2]",
+    place_result = "boiler-2",
+    stack_size = 50
+  },
+  
+    {
+    type = "item",
+    name = "boiler-3",
+    icon = "__base__/graphics/icons/boiler.png",
+    icon_size = 32,
+    flags = {"goes-to-quickbar"},
+    subgroup = "KT_machine",
+    order = "b[boiler-3]",
+    place_result = "boiler-3",
+    stack_size = 50
+  },
+  
+  
+  
+  
+  {
+    type = "item",
+    name = "crystallized-coal",
+    icon = "__MFFG__/graphics/icons/crystallized-coal.png",
+    icon_size = 32,
+    flags = {"goes-to-main-inventory"},
+    fuel_category = "chemical",
+    fuel_value = "16MJ",
+	fuel_acceleration_multiplier = 1.1,
+    fuel_top_speed_multiplier = 1.05,
+    subgroup = "raw-resource",
+    order = "b[crystallized-coal]",
+    stack_size = 999
+  },
+  
+  
+  
+  
+  
+  
+  {
+    type = "item-with-entity-data",
+    name = "nuclear-locomotive",
+    icon = "__base__/graphics/icons/diesel-locomotive.png",
+    icon_size = 32,
+    flags = {"goes-to-quickbar"},
+    subgroup = "KT_transport",
+    order = "a[train-system]-f[nuclear-locomotive]",
+    place_result = "nuclear-locomotive",
+    stack_size = 1
+  },
+  
+  
+  
+   {
+    type = "item-with-entity-data",
+    name = "APO",
+    icon = "__base__/graphics/icons/tank.png",
+    icon_size = 32,
+    flags = {"goes-to-quickbar"},
+    subgroup = "KT_transport",
+    order = "b[personal-transport]-b[APO]",
+    place_result = "APO",
+    stack_size = 1
   },
   
   
@@ -930,6 +1002,55 @@ data:extend(
   
   
   
+  
+  
+  
+  
+  
+  
+  { -- Gunship
+    type = "item-with-entity-data",
+    name = "gunship",
+    icon = "__MFFG__/graphics/airship/Gunship_Icon.png",
+	icon_size = 32,
+    flags = { "goes-to-quickbar" },
+    subgroup = "KT_transport",
+    place_result= "gunship",
+    stack_size= 1,
+  },
+  
+  { -- Cargo Plane
+    type = "item-with-entity-data",
+    name = "cargo-plane",
+    icon = "__MFFG__/graphics/airship/Cargo_Plane_Icon.png",
+	icon_size = 32,
+    flags = { "goes-to-quickbar" },
+    subgroup = "KT_transport",
+    place_result= "cargo-plane",
+    stack_size= 1,
+  },
+  
+   { -- Jet
+    type = "item-with-entity-data",
+    name = "jet",
+    icon = "__MFFG__/graphics/airship/Jet_Icon.png",
+	icon_size = 32,
+    flags = { "goes-to-quickbar" },
+    subgroup = "KT_transport",
+    place_result= "jet",
+    stack_size= 1,
+  },
+  
+  { -- Flying Fortress
+    type = "item-with-entity-data",
+    name = "flying-fortress",
+    icon = "__MFFG__/graphics/airship/Flying_Fortress_Icon.png",
+	icon_size = 32,
+    flags = { "goes-to-quickbar" },
+    subgroup = "KT_transport",
+    place_result= "flying-fortress",
+    stack_size= 1,
+  },
   
   
   
