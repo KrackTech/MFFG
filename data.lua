@@ -37,7 +37,9 @@ require("prototypes.tile.noise-layers")
 require("prototypes.autoplace-controls")
 require("prototypes.map-gen-presets")
 
-
+require("prototypes.entity.air-condenser")
+require("prototypes.recipe.air-condenser")
+require("prototypes.item.air-condenser")
 
 
 

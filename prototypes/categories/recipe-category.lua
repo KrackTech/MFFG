@@ -13,6 +13,10 @@ data:extend(
     name = "smelting"
   },
   {
+	type = "recipe-category",
+	name = "air-water"
+  },
+  {
     type = "recipe-category",
     name = "chemistry"
   },
