@@ -159,6 +159,8 @@ data:extend(
     order = "a-f-c",
   },
   
+  
+  
   {
     type = "technology",
     name = "perfect-oil-processing",
@@ -185,6 +187,9 @@ data:extend(
     },
     order = "d-b"
   },
+  
+  
+  
   {
     type = "technology",
     name = "electric-energy-distribution-2",
@@ -315,6 +320,32 @@ data:extend(
   
   
   
+   {
+    type = "technology",
+    name = "oil-pyrolysis",
+	icon_size = 128,
+    icon = "__base__/graphics/technology/oil-processing.png",
+    prerequisites = {"perfect-oil-processing"},
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "oil-pyrolysis"
+      }
+    },
+    unit =
+    {
+      count = 500,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1}
+      },
+      time = 30
+    },
+    order = "d-b"
+  },
   
   
   

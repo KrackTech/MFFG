@@ -24,6 +24,35 @@ data:extend(
 	icon_size = 32,
     order = "a[oil-processing]-b[perfect-oil-processing]"
   },
+  
+  
+  
+  
+    {
+    type = "recipe",
+    name = "oil-pyrolysis",
+    category = "oil-processing",
+    enabled = false,
+    energy_required = 10,
+    ingredients =
+    {    
+      {type="fluid", name="crude-oil", amount=100}
+    },
+    results=
+    {
+      {type="fluid", name="petroleum-gas", amount=200}
+    },
+    icon = "__MFFG__/graphics/icons/fluid/oil-pyrolysis.png",
+    subgroup = "fluid-recipes",
+	icon_size = 32,
+    order = "a[oil-processing]-b[oil-pyrolysis]"
+  },
+  
+  
+  
+  
+  
+  
    {
     type = "recipe",
     name = "coal-liquefaction2",
