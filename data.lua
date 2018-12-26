@@ -41,7 +41,7 @@ require("prototypes.map-gen-presets")
 
 
 
-require("prototypes.entity.airship")
+--require("prototypes.entity.airship")
 
 
 

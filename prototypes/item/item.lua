@@ -1006,7 +1006,7 @@ data:extend(
   
   
   
-  
+  --[[
   
   { -- Gunship
     type = "item-with-entity-data",
@@ -1054,7 +1054,7 @@ data:extend(
   
   
   
-  
+  ]]--
   
   
   
