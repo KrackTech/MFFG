@@ -344,7 +344,7 @@ data:extend(
     type = "recipe",
     name = "boiler-3",
     energy_required = 20,
-    enabled = true,
+    enabled = false,
     ingredients = {{"steel-plate", 100}, {"electronic-circuit", 200}, {"copper-plate", 400}, {"pipe", 20}},
     result = "boiler-3"
   },

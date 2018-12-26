@@ -759,6 +759,38 @@ data:extend(
     },
     order = "e-c-c"
   },
+  { --steel-processing
+    type = "technology",
+    name = "steel-processing",
+    icon_size = 128,
+    icon = "__base__/graphics/technology/steel-processing.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "steel-plate"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "boiler-3"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "steel-chest"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "steel-axe"
+      }
+    },
+    unit =
+    {
+      count = 50,
+      ingredients = {{"science-pack-1", 1}},
+      time = 5
+    },
+    order = "c-a"
+  },
   { --worker-robots-storage-3
     type = "technology",
     name = "worker-robots-storage-3",
