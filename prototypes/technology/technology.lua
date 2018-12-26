@@ -1,7 +1,6 @@
 data:extend(
 {
- 
-  {
+  { --power-armor-modules
     type = "technology",
     name = "power-armor-modules",
 	icon_size = 128,
@@ -46,8 +45,7 @@ data:extend(
     },
     order = "g-c-b"
   },
- 
-   {
+  { --Logistics
     type = "technology",
     name = "logistics",
 	icon_size = 128,
@@ -78,9 +76,8 @@ data:extend(
       time = 15
     },
     order = "a-f-a",
-  },
-  
-  {
+  }, 
+  { --Logistics-2
     type = "technology",
     name = "logistics-2",
 	icon_size = 128,
@@ -116,9 +113,8 @@ data:extend(
       time = 30
     },
     order = "a-f-b",
-  },
-  
-  {
+  }, 
+  { --Logistics-3
     type = "technology",
     name = "logistics-3",
 	icon_size = 128,
@@ -157,35 +153,8 @@ data:extend(
       time = 15
     },
     order = "a-f-c",
-  },
-  
-  {
-    type = "technology",
-    name = "perfect-oil-processing",
-	icon_size = 128,
-    icon = "__base__/graphics/technology/oil-processing.png",
-    prerequisites = {"advanced-oil-processing","sulfur-processing"},
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "perfect-oil-processing"
-      }
-    },
-    unit =
-    {
-      count = 100,
-      ingredients =
-      {
-        {"science-pack-1", 1},
-        {"science-pack-2", 1},
-        {"science-pack-3", 1}
-      },
-      time = 30
-    },
-    order = "d-b"
-  },
-  {
+  }, 
+  { --electric-energy-distribution-2
     type = "technology",
     name = "electric-energy-distribution-2",
 	icon_size = 128,
@@ -215,7 +184,7 @@ data:extend(
     },
     order = "c-e-c",
   },
-  {
+  { --worker-robots-storage-1
     type = "technology",
     name = "worker-robots-storage-1",
     icon_size = 128,
@@ -242,7 +211,7 @@ data:extend(
     upgrade = true,
     order = "c-k-g-a"
   },
-  {
+  { --worker-robots-storage-2
     type = "technology",
     name = "worker-robots-storage-2",
     icon_size = 128,
@@ -270,11 +239,7 @@ data:extend(
     upgrade = true,
     order = "c-k-g-b"
   },
-  
-  
-  
-  
-  {
+  { --army
     type = "technology",
     name = "army",
     icon_size = 128,
@@ -308,17 +273,60 @@ data:extend(
     },
     
     order = "e-p-b-c"
+  }, 
+  { --perfect-oil-processing
+    type = "technology",
+    name = "perfect-oil-processing",
+	icon_size = 128,
+    icon = "__base__/graphics/technology/oil-processing.png",
+    prerequisites = {"advanced-oil-processing","sulfur-processing"},
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "perfect-oil-processing"
+      }
+    },
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1}
+      },
+      time = 30
+    },
+    order = "d-b"
   },
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  --[[
+  { --oil-pyrolysis
+    type = "technology",
+    name = "oil-pyrolysis",
+	icon_size = 128,
+    icon = "__base__/graphics/technology/oil-processing.png",
+    prerequisites = {"perfect-oil-processing"},
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "oil-pyrolysis"
+      }
+    },
+    unit =
+    {
+      count = 500,
+      ingredients =
+      {
+        {"science-pack-1", 1},
+        {"science-pack-2", 1},
+        {"science-pack-3", 1}
+      },
+      time = 60
+    },
+    order = "d-b"
+  },
+  --[[ Planes
    {
     type = "technology",
     name = "planes",
@@ -361,32 +369,8 @@ data:extend(
   },
   
   
-  ]]--
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  {
+  ]]-- 
+  { --hydrogen-bomb
     type = "technology",
     name = "hydrogen-bomb",
     icon_size = 128,
@@ -415,11 +399,7 @@ data:extend(
     },
     order = "e-a-b"
   },
-  
-  
-  
-  
-  {
+  { --landfill
     type = "technology",
     name = "landfill",
     icon_size = 128,
@@ -446,10 +426,8 @@ data:extend(
       }
     },
     order = "b-d"
-  },
-  
-  
-  {
+  },  
+  { --world-guard
     type = "technology",
     name = "world-guard",
     icon_size = 128,
@@ -477,44 +455,8 @@ data:extend(
       time = 120
     },
     order = "e-a-b"
-  },
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  {
+  },  
+  { --coal-liquefaction
     type = "technology",
     name = "coal-liquefaction",
     icon_size = 128,
@@ -548,29 +490,8 @@ data:extend(
       time = 30
     },
     order = "d-c"
-  },
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-   {
+  }, 
+  { --nuclear-power
     type = "technology",
     name = "nuclear-power",
     icon_size = 128,
@@ -627,20 +548,8 @@ data:extend(
       count = 1000
     },
     order = "e-p-b-c"
-  },
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  {
+  },  
+  { --military-3
     type = "technology",
     name = "military-3",
     icon_size = 128,
@@ -687,15 +596,8 @@ data:extend(
       time = 30
     },
     order = "e-a-c"
-  },
-  
-  
-  
-  
-  
-  
-  
-   {
+  },  
+  { --steam-machine
     type = "technology",
     name = "steam-machine",
     icon_size = 128,
@@ -743,11 +645,8 @@ data:extend(
       time = 30
     },
     order = "a-b-a",
-  },
-  
-  
-  
-   {
+  },  
+  { --military-4
     type = "technology",
     name = "military-4",
     icon_size = 128,
@@ -779,13 +678,7 @@ data:extend(
     },
     order = "e-a-e"
   },
-  
-  
-  
-  
-  
-  
-   {
+  { --claymor
     type = "technology",
     name = "claymor",
     icon_size = 128,
@@ -810,9 +703,8 @@ data:extend(
       time = 60
     },
     order = "e-e"
-  },
-  
-  {
+  }, 
+  { --power-armor-3
     type = "technology",
     name = "power-armor-3",
     icon_size = 128,
@@ -839,9 +731,8 @@ data:extend(
       time = 60
     },
     order = "g-c-b"
-  },
-  
-   {
+  },  
+  { --APO
     type = "technology",
     name = "APO",
     icon_size = 128,
@@ -868,33 +759,7 @@ data:extend(
     },
     order = "e-c-c"
   },
- 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  {
+  { --worker-robots-storage-3
     type = "technology",
     name = "worker-robots-storage-3",
     icon_size = 128,
@@ -923,7 +788,5 @@ data:extend(
     upgrade = true,
     order = "c-k-g-c"
   }
-  
-  
 }
 )
