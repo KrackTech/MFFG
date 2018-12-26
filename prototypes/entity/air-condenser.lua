@@ -47,7 +47,7 @@ data:extend(
         }
       }
     },
-    pumping_speed = 0.09,
+    pumping_speed = 0.0833333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333,
     tile_width = 1,
     tile_height = 1,
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
