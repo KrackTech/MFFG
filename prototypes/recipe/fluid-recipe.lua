@@ -56,7 +56,7 @@ data:extend(
    {
     type = "recipe",
     name = "coal-liquefaction2",
-    category = "oil-processing",
+    category = "chemistry",
     enabled = false,
     energy_required = 5,
     ingredients =
